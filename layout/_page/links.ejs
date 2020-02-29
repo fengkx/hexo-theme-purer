@@ -1,0 +1,25 @@
+<main class="flex-1 px-4 py-12 md:px-5 lg:px-8 lg:py-4 relative min-h-screen">
+    <article class="content article article-archives article-type-list" itemscope="">
+        <header class="article-header">
+            <h1 itemprop="title"><%= page.title; %></h1>
+            <p class="text-gray-600"><%= __('page.links-desc') %></p>
+        </header>
+        <div class="article-body">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 row-gap-5 col-gap-6">
+                <% for (let name in site.data.links) { %>
+                    <% let item = site.data.links[name]; %>
+                    <div class="shadow flex">
+                        <a href="<%= item.link %>" target="_blank" class="w-24 inline-block mr-3">
+                            <img src="<%= item.avatar %>" class="w-full h-full" alt="">
+                        </a>
+                        <div class="p-2">
+                            <h4 class="leading-loose text-lg"><a href="<%= item.link %>" target="_blank"><span class="text-dark"><%= name %></span></a></h4>
+                                <span class="link-desc text-gray-600 text-sm"><%= item.desc %></span>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </article>
+    <%- partial('_partial/pagination', {type: 'page'}) %>
+</main>

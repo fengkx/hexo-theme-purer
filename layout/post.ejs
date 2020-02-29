@@ -1,0 +1,11 @@
+<% if (page.layout === 'tags') { %>
+    <%- partial('_page/tagcloud') %>
+<% } else if (page.layout === 'categories') { %>
+    <%- partial('_page/categories') %>
+<% } else if (page.layout === 'links') { %>
+    <%- partial('_page/links') %>
+<% } else if (page.layout === 'repository') { %>
+    <%- partial('_page/repository') %>
+<% } else { %>
+    <%- partial('_page/post') %>
+<% } %>

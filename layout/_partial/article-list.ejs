@@ -1,0 +1,6 @@
+<div class="content article-list">
+    <% page.posts.forEach(function (post) {
+    %>
+        <%- partial('article-post', {post: post}) %>
+    <% }) %>
+</div>

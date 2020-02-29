@@ -1,0 +1,13 @@
+<html <% if(config.language) { %> lang="<%- config.language %>" <% } %>>
+    <%- partial('_common/head') %>
+    <body>
+        <%- partial('_common/header') %>
+        <section class="main-section">
+            <%- body %>
+        </section>
+        <%- partial('_common/aside', {}, {cache: true}) %>
+        <%- partial('_common/footer', {}, {cache: true}) %>
+        <%- partial('_common/scripts', {}, {cache: true}) %>
+
+    </body>
+</html>

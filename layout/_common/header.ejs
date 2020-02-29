@@ -1,0 +1,36 @@
+<header class="header header-fixture">
+    <div class="profile-search-wrap flex sm:block">
+        <% if (theme.profile && theme.profile.enabled) { %>
+        <% const profile = theme.profile; %>
+        <div class="profile sm:text-center md:px-1 lg:px-3 sm:pb-4 sm:pt-6">
+            <a id="avatar" href="<%= profile.follow %>" class="inline-block lg:w-16 lg:h-16 w-8 h-8 m-2" target="_blank">
+                <img src="<%= (profile.gravatar ? gravatar(profile.gravatar, 128) : url_for(profile.avatar)) %>" class="rounded-full">
+            </a>
+            <h2 id="name" class="hidden lg:block"><%= profile.author %></h2>
+            <h3 id="title" class="hidden xl:block"><%= profile.author_title %></h3>
+            <% if (profile.location) { %>
+            <small id="location" class="hidden lg:block">
+                <i class="iconfont icon-map-icon"></i>
+                <%= profile.location %>
+            </small>
+            <% } %>
+        </div>
+        <% } %>
+        <%- partial('_search/index') %>
+        <button id="menu-toggle-btn" class="block sm:hidden p-3">
+            <i class="iconfont icon-hamburger"></i>
+        </button>
+    </div>
+    <nav id="menu-nav" class="hidden sm:flex flex-col">
+        <% for (let i in theme.menu) { %>
+        <% const itemName = i.toLowerCase() %>
+            <div class="menu-item menu-<%= itemName %>">
+                <a href="<%= url_for(theme.menu[i]) %>">
+                    <i class="iconfont <%= theme.menu_icons[itemName] %>"></i>
+                    <span class="menu-title"><%= __(`menu.${i}`) %></span>
+                </a>
+            </div>
+        <% } %>
+        <%- partial('_common/social')%>
+    </nav>
+</header>

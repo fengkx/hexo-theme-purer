@@ -1,0 +1,23 @@
+<main class="flex-1 px-4 py-12 md:px-5 lg:px-8 lg:py-4 relative min-h-screen">
+    <article class="content article article-archives article-type-list" itemscope="">
+        <header class="article-header">
+            <h1 itemprop="title"><%= __('tag'); %></h1>
+            <p class="text-gray-600"><%= _p('total.tag', site.tags.length) %></p>
+        </header>
+        <div class="article-body">
+            <%- partial('_widget/tagcloud', {title: false}) %>
+            <% site.tags.each(function(tag) {
+                const posts = tag.posts
+            %>
+            <%- partial('_partial/post-item-list', {
+                title: tag.name,
+                posts:posts,
+                dateFormat: 'YYYY-MM-DD',
+                path: tag.path
+            }) %>
+
+            <% }) %>
+        </div>
+    </article>
+    <%- partial('_partial/pagination', {type: 'page'}) %>
+</main>

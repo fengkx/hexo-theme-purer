@@ -1,0 +1,113 @@
+# menu
+menu:
+  Home: .
+  Archives: archives  # 归档
+  Categories: categories  # 分类
+  Tags: tags  # 标签
+  Repository: repository  # github repositories
+#  Books: books  # 豆瓣书单
+  Links: links  # 友链
+  About: about  # 关于
+
+# Enable/Disable menu icons
+menu_icons:
+  enable: true  # 是否启用导航菜单图标
+  home: icon-home
+  archives: icon-archive
+  categories: icon-folder
+  tags: icon-tag
+  repository: icon-project
+  books: icon-book
+  links: icon-friend
+  about: icon-cup
+
+
+
+site:
+  favicon: /images/favicon.ico
+
+pagination:
+  prev:
+    alwayShow: true
+  next:
+    alwayShow: true
+
+comment:
+  type: gitalk
+
+github:
+  username: fengkx
+
+# wordcount
+postCount:
+  enable: true
+  wordcount: true  # 文章字数统计
+  min2read: true  # 阅读时长预计
+
+
+profile:
+  enabled: true # Whether to show profile bar
+#  avatar: images/avatar.jpg
+  gravatar: MyEmailAddress@example.com # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
+  author: fengkx
+  author_title: Student & Coder
+  author_description: Having fun
+  location: Guangzhou, China
+  follow: https://github.com/fengkx
+  # Social Links
+  social:
+    links:
+      github: https://github.com/fengkx
+      telegram: https://t.me/fengkx
+      twitter: https://twitter.com/example
+      # facebook: /
+      # dribbble: /
+#      behance: https://www.behance.net/cofess
+      rss: atom.xml
+    link_tooltip: true # enable the social link tooltip, options: true, false
+
+  # My Personal Links
+  links:
+    Github: https://github.com/fengkx
+    Blog: http://www.fengkx.top
+    Email: i#fengkx.top(请将#替换成@)
+    Wechat: liang222liang
+  # My Personal Labels
+  labels:
+    - 前端
+    - Node.js
+    - Golang
+    - Linux日常使用
+  skills:
+    Git: ★★★☆☆
+    Gulp: ★★★☆☆
+    Javascript: ★★★☆☆
+    HTML+CSS: ★★★☆☆
+    Bootstrap: ★★★☆☆
+   # My Personal Works
+  works:
+   name:
+     link: http://www.example.com
+     date: 2016
+  # My Personal Projects
+  projects:
+    fengkx/NodeRSSBot: https://github.com/fengkx/NodeRSSBot
+    fengkx/translator: https://github.com/fengkx/translator
+    fengkx/cacheman-level: https://github.com/fengkx/cacheman-level
+
+
+widgets:
+#  - board
+  - category
+  - tag
+  - tagcloud
+  - archive
+  - recent_posts
+
+#widget behaivor
+show_count: true
+
+cdn:
+  katex: //cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css
+  gitment: //cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css
+  gitalk: //cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.css

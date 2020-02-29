@@ -1,0 +1,94 @@
+menu:
+  Home: Home
+  Archives: Archives
+  Categories: Categories
+  Tags: Tags
+  Repository: Repository
+  Books: Books
+  Movies: Movies
+  Links: Links
+  About: About
+nav:
+  all: All
+  older: Older
+  newer: Newer
+page:
+  home: Home
+  archive: Archive
+  archives: Archives
+  category: Category
+  categories: Categories
+  tag: Tag
+  tags: Tags
+  tagcloud: Tag Cloud
+  uncategorized: Uncategorized
+  repository: Repository
+  douban: Douban
+  books: Books
+  books-desc: Personal collection of books recommended to everyone
+  movies: Movies
+  movies-desc: Personal favorite movies recommended to everyone
+  links: Links
+  links-desc: Welcome to the exchange link, you can leave a message on this page
+  about: About
+pagination: 
+  next: Next
+  prev: Prev
+  page: Page %d
+  pageof: Page %d of %s
+widget:
+  search: Search
+  board: Board
+  archive: Archive
+  tags: Tags
+  categories: Categories
+  tagcloud: Tag Cloud
+  recent_posts: Recent Posts
+profile: 
+  follow: Follow
+  skill: Skills
+  label: Labels
+  work: Works
+  project: Projects
+  link: Links
+insight:
+  hint: Type something...
+  posts: Posts
+  pages: Pages
+  categories: Categories
+  tags: Tags
+  untitled: (Untitled)
+unit:
+  word: words
+  time: minutes
+article:
+  wordcount: Word Count
+  readcount: Read Count
+  more: Read More
+  comments: Comments
+  share: Share
+  catalogue: Catalogue
+total:
+  article: Total %d articles
+  tag: Total %d tags
+  category: Total %d categories
+  link: Total %d links
+  repository: Total %d projects
+donate:
+  qrcode_alt: Scan Qrcode
+  qrcode_title: Scan
+  button: $
+  title: Maybe you could buy me a cup of coffee.
+  tip: Scan this qrcode
+  alipay_action_tip: Open alipay app scan this qrcode, buy me a coffee!
+  wechatpay_action_tip: Open wechat app scan this qrcode, buy me a coffee!
+  alipay: alipay
+  wechatpay: wechat payment
+comment: Comment
+tweets: Tweets
+share: Share
+rss_feed: RSS Feed
+copyright:
+  theme_by: Theme by
+  base_on: base on
+  powered_by: Powered by

@@ -1,0 +1,13 @@
+<footer class="hidden lg:block fixed bottom-0 left-0 sm:w-1/12 lg:w-1/6 bg-gray-100">
+    <% if(theme.profile.social.links) {
+        const links = theme.profile.social.links
+    %>
+    <div class="footer-social-links">
+        <% for (let i in links) { %>
+            <a href="<%= url_for(links[i]) %>">
+                <i class="iconfont icon-<%= i %>"></i>
+            </a>
+        <% } %>
+    </div>
+    <% } %>
+</footer>

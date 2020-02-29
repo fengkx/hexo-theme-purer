@@ -1,0 +1,14 @@
+<% if(theme.profile.social.links) {
+    const links = theme.profile.social.links
+%>
+<div class="social-links lg:hidden px-6 my-2 sm:mt-48">
+    <% for (let i in links) { %>
+        <span class="social-item mr-2 mb-2">
+            <a href="<%= url_for(links[i]) %>" class="lg:my-1 lg:mx-2 lg:px-4 lg:py-2 sm:px-5 sm:py-2">
+                <i class="iconfont icon-<%= i %>"></i>
+                <span class="menu-title hidden lg:inline"><%= __(`menu.${i}`) %></span>
+            </a>
+        </span>
+    <% } %>
+</div>
+<% } %>

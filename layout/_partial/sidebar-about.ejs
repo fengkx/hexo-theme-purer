@@ -1,0 +1,82 @@
+<aside class="aside aside-fixture" itemscope itemtype="http://schema.org/WPSideBar">
+    <div class="widgets">
+        <% if(theme.profile.links) { %>
+            <div class="widget links-widget">
+                <h3 class="widget-title"><%= __('profile.link') %></h3>
+                <div class="widget-body">
+                    <ul class="link-list">
+                        <% for(var i in theme.profile.links) { %>
+                            <li>
+                                <%= i %>:
+                                <% if (theme.profile.links[i].startsWith('http')) { %>
+                                    <a href="<%- theme.profile.links[i] %>" target="_blank"><%- theme.profile.links[i] %></a>
+                                <%  } else { %>
+                                    <a><%- theme.profile.links[i] %></a>
+                                <% } %>
+                            </li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        <% } %>
+        <% if(theme.profile.skills) { %>
+            <div class="widget skills-widget">
+                <h3 class="widget-title"><%= __('profile.skill') %></h3>
+                <div class="widget-body">
+                    <ul class="skill-list">
+                        <% for(let i in theme.profile.skills) { %>
+                                <div class="skill-item flex justify-between">
+                                    <span><%= i %></span>
+                                    <span class="pull-right"><%- theme.profile.skills[i] %></span>
+                                </div>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        <% } %>
+        <% if(theme.profile.labels) { %>
+            <div class="widget labels-widget">
+                <h3 class="widget-title"><%= __('profile.label') %></h3>
+                <div class="widget-body">
+                    <% for(var i in theme.profile.labels) { %>
+                        <span class="label label-default mb"><%- theme.profile.labels[i] %></span>
+                    <% } %>
+                </div>
+            </div>
+        <% } %>
+        <% if(theme.profile.works) { %>
+            <div class="widget works-widget">
+                <h3 class="widget-title"><%= __('profile.work') %></h3>
+                <div class="widget-body">
+                    <ul class="work-list">
+                        <% for(var i in theme.profile.works) { %>
+                        <a href="<%- theme.profile.works[i].link %>" target="_blank" title="<%= i %>">
+                            <div class="work-item flex justify-between">
+                                <span><%= i %></span>
+                                <span class="pull-right text-muted"><%- theme.profile.works[i].date %></span>
+                            </div>
+                        </a>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        <% } %>
+        <% if(theme.profile.projects) { %>
+            <div class="widget projects-widget">
+                <h3 class="widget-title"><%= __('profile.project') %></h3>
+                <div class="widget-body">
+                    <ul class="project-list">
+                        <% for(var i in theme.profile.projects) { %>
+                            <li class="public source">
+                                <a href="<%- theme.profile.projects[i] %>" target="_blank" title="<%= i %>">
+                                    <span class="repo-icon octicon octicon-repo"></span>
+                                    <span class="repo-and-owner css-truncate-target"><%= i %></span>
+                                </a>
+                            </li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</aside>

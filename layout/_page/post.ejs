@@ -1,0 +1,22 @@
+<main class="flex-1 px-4 py-12 md:px-5 lg:px-8 lg:py-4 relative min-h-screen">
+    <article class="content article article-archives article-type-list" itemscope="">
+        <header class="article-header">
+            <%- partial('_partial/post/title', {post: page, index: false, className: 'article-title'})%>
+            <p class="article-meta mb-3 text-xs">
+                <%- partial('_partial/post/date', {post: page, className: 'article-date', dateFormat: 'MMM D'}) %>
+                <%- partial('_partial/post/category', {post: page}) %>
+                <%- partial('_partial/post/tag', {post: page}) %>
+                <span class="_partial/post-comment"><i class="icon icon-comment"></i>
+                    <a href="<%- url_for(page.path) %>#comments" class="article-comment-link">
+                        <%= __('article.comments') %>
+                    </a>
+                </span>
+                <%- partial('_partial/post/wordcount', {post: page}) %>
+            </p>
+        </header>
+        <div class="marked-body article-body">
+            <%- page.content %>
+        </div>
+    </article>
+    <%- partial('_partial/pagination', {type: 'page'}) %>
+</main>

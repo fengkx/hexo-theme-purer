@@ -1,0 +1,6 @@
+<span class="article-date">
+    <i class="iconfont icon-calendar-check"></i>
+	<a href="<%- url_for(post.path) %>" class="<%= className %>">
+	  <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, dateFormat) %></time>
+	</a>
+</span>

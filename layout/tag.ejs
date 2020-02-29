@@ -1,0 +1,12 @@
+<main class="flex-1 px-4 py-12 md:px-5 lg:px-8 lg:py-4 relative min-h-screen">
+    <article class="content article article-archives article-type-list" itemscope="">
+        <header class="article-header">
+            <h1 itemprop="title"><%= `${__('tag')} : ${page.tag}` %></h1>
+            <p class="text-gray-600"><%= _p('total.article', page.posts.length) %></p>
+        </header>
+        <div class="article-body">
+            <%- partial('_partial/archive') %>
+        </div>
+    </article>
+    <%- partial('_partial/pagination', {type: 'page'}) %>
+</main>

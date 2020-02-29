@@ -1,0 +1,39 @@
+<% if(page.total > 1) { %>
+<nav class="pagination bottom-0 px-5 mb-3 absolute w-full inset-x-0" data-stick-bottom>
+    <div class="flex justify-between leading-tight">
+        <span class="pager">
+            <% if (!page.prev && theme.pagination.prev.alwayShow) { %>
+                <button class="prev disabled">
+                    <a href="#">
+                        <i class="iconfont icon-angle-left"></i>
+                        <%= __('pagination.prev') %>
+                    </a>
+                </button>
+            <% } else { %>
+                <button class="prev">
+                    <a href="<%- url_for(page.prev_link) %>">
+                        <i class="iconfont icon-angle-left"></i>
+                        <%= __('pagination.prev') %>
+                    </a>
+                </button>
+            <% } %>
+            <% if (!page.next && theme.pagination.next.alwayShow) { %>
+                <button class="next disabled">
+                    <a href="#">
+                        <%= __('pagination.next') %>
+                        <i class="iconfont icon-angle-right"></i>
+                    </a>
+                </button>
+            <% } else { %>
+                <button class="next">
+                    <a href="<%- url_for(page.next_link) %>">
+                        <%= __('pagination.next') %>
+                        <i class="iconfont icon-angle-right"></i>
+                    </a>
+                </button>
+            <% } %>
+        </span>
+        <div class="total-article bar-right"><%= _p('pagination.pageof', page.current, page.total) %></div>
+    </div>
+</nav>
+<% } %>

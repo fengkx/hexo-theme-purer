@@ -1,0 +1,22 @@
+<main class="flex-1 px-4 py-12 md:px-5 lg:px-8 lg:py-4 relative min-h-screen">
+    <article class="content article article-archives article-type-list" itemscope="">
+        <header class="article-header">
+            <h1 itemprop="title"><%= __('category'); %></h1>
+            <p class="text-gray-600"><%= _p('total.category', site.categories.length) %></p>
+        </header>
+        <div class="article-body">
+            <% site.categories.each(function(category) {
+                const posts = category.posts
+            %>
+            <%- partial('_partial/post-item-list', {
+                title: category.name,
+                posts:posts,
+                path: category.path,
+                dateFormat: 'YYYY-MM-DD'
+            }) %>
+
+            <% }) %>
+        </div>
+    </article>
+    <%- partial('_partial/pagination', {type: 'page'}) %>
+</main>

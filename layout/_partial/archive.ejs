@@ -1,0 +1,26 @@
+<% if(!page.year) { %>
+    <%
+    const years = {};
+    page.posts.each(post => years[post.date.year()] = null)
+    for(let year of Object.keys(years).sort((a, b) => b - a)) {
+    const posts = page.posts.filter(p => p.date.year().toString() === year)
+    %>
+        <%- partial('_partial/post-item-list', {
+            title: year,
+            posts: posts,
+            dateFormat: 'MM-DD',
+            path: '#'
+        }) %>
+    <% } %>
+<% } else { %>
+    <%
+        const year = page.year
+        const posts = page.posts.filter(p => p.date.year() == year)
+    %>
+    <%- partial('_partial/post-item-list', {
+        title: year,
+        posts: posts,
+        dateFormat: 'MM-DD',
+        path: '#'
+    }) %>
+<% } %>

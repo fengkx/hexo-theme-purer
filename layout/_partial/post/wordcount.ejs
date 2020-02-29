@@ -1,0 +1,8 @@
+<% if(theme.postCount.enable && typeof wordcount === 'function'){  %>
+    <% if(theme.postCount.wordcount){  %>
+        <span class="post-wordcount" itemprop="wordCount"><%= __('article.wordcount') %>: <%= wordcount(post.content) %>(<%= __('unit.word') %>)</span>
+    <% } %>
+    <% if(theme.postCount.min2read){  %>
+        <span class="post-readcount" itemprop="timeRequired"><%= __('article.readcount') %>: <%= min2read(post.content) %>(<%= __('unit.time') %>)</span>
+    <% } %>
+<% } %>
