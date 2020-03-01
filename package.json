@@ -10,13 +10,16 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.8.6",
+    "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.8.6",
     "autoprefixer": "^9.7.4",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.1",
     "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
+    "gulp-babel": "^8.0.0-beta.2",
     "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^8.0.0",
@@ -24,6 +27,12 @@
     "gulp-uglify": "^3.0.2",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.2.1",
-    "tailwindcss": "^1.2.0"
+    "tailwindcss": "^1.2.0",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.8.4",
+    "core-js": "^3.6.4"
   }
 }

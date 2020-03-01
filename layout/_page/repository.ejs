@@ -1,4 +1,5 @@
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/yox@1.0.0-alpha.121/dist/standard/prod/yox.min.js"></script>-->
 <style>
     .aside-fixture {
         display: none !important;
@@ -14,59 +15,40 @@
             <p class="text-gray-600">I have <span id="repo-count">0</span> projects on GitHub </p>
         </header>
         <div id="repo-root" class="article-body">
-            <p v-if="loading">Loading...</p>
-            <div class="repos">
-                <div v-for="repo in repos_sorted" class="repo">
-                    <header>
-                        <h3 class="repo-title">
-                            <a v-bind:href="repo.html_url">{{ repo.full_name }}</a>
-                        </h3>
-                    </header>
-                    <p class="repo-body">
-                        {{ repo.description }}
-                    </p>
-                    <div class="repo-meta">
-                        <div class="repo-meta-inner">
-                            <span class="repo-lang">{{ repo.language }}</span>
-                            <span class="repo-star"><i class="iconfont icon-star"></i> {{ repo.stargazers_count }}</span>
-                            <span class="repo-fork"><i class="iconfont icon-code-fork"></i> {{ repo.forks_count }}</span>
-                            <span class="meta meta-last-updated">
-                                <i class="icon icon-clock"></i>
-                                <time v-bind:datetime="repo.updated_at">{{ repo.updated_at.substring(0, repo.updated_at.lastIndexOf("T")) }}</time>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </article>
     <%- partial('_partial/pagination', {type: 'page'}) %>
 </main>
-<script>
-    var app = new Vue({
-        el: '#repo-root',
-        data: {
-            loading: true,
-            github_repos: []
-        },
-        created: async function () {
-            const resp = await fetch('https://api.github.com/users/<%= theme.github.username%>/repos?sort=updated&per_page=100')
-            const data = await resp.json();
-            document.getElementById('repo-count').textContent = data.length < 50 ? data.length : 'at least ' + data.length ;
-            this.loading = false;
-            this.github_repos = data
-        },
-        computed: {
-            repos_sorted: function() {
-                return this.github_repos
-                    .sort(function (a, b) {
-                        var a_start = a.stargazers_count;
-                        var b_start = b.stargazers_count;
-                        if (a.fork) a_start * 0.5;
-                        if (b.fork) b_start * 0.5;
-                        return b_start - a_start;
-                    })
-            }
-        }
-    });
+<script id="repo-template" type="text/html">
+    <div>
+    {{#if loading}}
+    <p v-if="loading">Loading...</p>
+    {{/if}}
+    <div class="repos">
+        {{#each repos_sorted}}
+        <div v-for="repo in repos_sorted" key="{{this.id}}" class="repo">
+            <header>
+                <h3 class="repo-title">
+                    <a href="{{ this.html_url }}">{{this.full_name}}</a>
+                </h3>
+            </header>
+            <p class="repo-body">
+                {{ this.description }}
+            </p>
+            <div class="repo-meta">
+                <div class="repo-meta-inner">
+                    <span class="repo-lang">{{ this.language }}</span>
+                    <span class="repo-star"><i class="iconfont icon-star"></i> {{ this.stargazers_count }}</span>
+                    <span class="repo-fork"><i class="iconfont icon-code-fork"></i> {{ this.forks_count }}</span>
+                    <span class="meta meta-last-updated">
+                        <i class="icon icon-clock"></i>
+                        <time datetime="repo.updated_at">{{ this.updated_at.substring(0, this.updated_at.lastIndexOf("T")) }}</time>
+                    </span>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    </div>
 </script>
+

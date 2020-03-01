@@ -138,7 +138,7 @@
 }
 
 .aside {
-    @apply fixed bg-gray-100 z-50;
+    @apply fixed bg-gray-100 z-30;
 }
 
 .header-fixture {
@@ -146,7 +146,7 @@
 }
 
 .header {
-    @apply fixed inset-x-0  h-auto bg-gray-100 z-50;
+    @apply fixed inset-x-0  h-auto bg-gray-100 z-30;
 }
 .side-placeholder {
     @apply bottom-0 h-full inline-block;
@@ -156,6 +156,7 @@
     @apply mb-2;
     .item-category {
         @apply font-medium text-indigo-600;
+        font-size: 1.125rem;
     }
     .item-title {
         @apply leading-normal;
@@ -250,9 +251,6 @@
     }
 }
 
-/*.repo-meta-inner {*/
-/*    @apply text-right mr-4;*/
-/*}*/
 
 @screen md {
     .repos {
@@ -421,7 +419,39 @@ a[href]:hover {
     @apply text-indigo-600;
 }
 
-/*fixed inset-x-0 top-0 h-auto sm:inset-y-0 sm:left-0 sm:w-1/12 lg:w-1/6 bg-gray-100*/
-/*top-0 bottom-0 h-full sm:w-1/12 lg:w-1/6 inline-block*/
+#search-view-container {
+    @apply fixed z-50;
+    width: 75vh;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin-top: 20vh;
+}
+.search-result {
+    overflow: auto;
+    max-height: 30rem;
+    .result-item {
+        .icon-file {
+            @apply text-lg mr-2;
+        }
+    }
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+         height: 8px;
+         background-color: #e6e6e6;
+     }
+    &::-webkit-scrollbar-thumb {
+         background-color: #f2f2f2;
+         @apply rounded;
+     }
+    &::-webkit-scrollbar-track-piece {
+         background-color: #cccccc;
+     }
+}
+
+#search-input:hover {
+    cursor: inherit;
+}
 
 @tailwind utilities;

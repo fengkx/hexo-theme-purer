@@ -1,1 +1,7 @@
 <%- js('js/dom-event.min.js') %>
+<script src="https://cdn.jsdelivr.net/npm/yox@1.0.0-alpha.121/dist/standard/dev/yox.min.js"></script>
+<% if(page.layout === 'repository') { %>
+    <div class="hidden invisible" id="github-username"><%= theme.github.username %></div>
+    <%- js('js/repository.min.js') %>
+<% } %>
+<%- js('js/local-search.min.js') %>
