@@ -76,15 +76,28 @@
     }
 }
 
-.widgets {
+.widget, #toc {
+    @apply mb-2;
+    .widget-title, .toc-title {
+        @apply font-semibold mb-1;
+    }
+}
+
+#toc {
+    .toc-link {
+        @apply leading-snug;
+    }
+    .toc-child {
+        @apply ml-4;
+    }
+    .toc-item {
+        @apply pb-1;
+    }
+}
+
+.widgets, .toc-sidebar {
     @apply px-8 py-6 overflow-auto h-full;
     scrollbar-width: none;
-    .widget {
-        @apply mb-2;
-        .widget-title {
-            @apply font-semibold mb-1;
-        }
-    }
 
     &::-webkit-scrollbar {
         display: none;

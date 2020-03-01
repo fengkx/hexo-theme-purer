@@ -715,7 +715,28 @@ video {
     border-radius: 0.125rem;
   }
 
-.widgets {
+.widget, #toc {
+  margin-bottom: 0.5rem;
+}
+
+.widget .widget-title, .widget .toc-title, #toc .widget-title, #toc .toc-title {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+#toc .toc-link {
+    line-height: 1.375;
+  }
+
+#toc .toc-child {
+    margin-left: 1rem;
+  }
+
+#toc .toc-item {
+    padding-bottom: 0.25rem;
+  }
+
+.widgets, .toc-sidebar {
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 1.5rem;
@@ -725,16 +746,7 @@ video {
   scrollbar-width: none;
 }
 
-.widgets .widget {
-    margin-bottom: 0.5rem;
-  }
-
-.widgets .widget .widget-title {
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
-
-.widgets::-webkit-scrollbar {
+.widgets::-webkit-scrollbar, .toc-sidebar::-webkit-scrollbar {
     display: none;
   }
 
@@ -742,7 +754,12 @@ video {
     .widgets .skill-widget,
     .widgets .works-widget,
     .widgets .labels-widget,
-    .widgets .projects-widget {
+    .widgets .projects-widget,
+    .toc-sidebar .links-widget,
+    .toc-sidebar .skill-widget,
+    .toc-sidebar .works-widget,
+    .toc-sidebar .labels-widget,
+    .toc-sidebar .projects-widget {
     font-size: 0.875rem;
     line-height: 1.625;
     color: #1a202c;

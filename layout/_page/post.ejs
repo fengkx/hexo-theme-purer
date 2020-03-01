@@ -20,3 +20,10 @@
     </article>
     <%- partial('_partial/pagination', {type: 'page'}) %>
 </main>
+<% if(page.layout === 'about') { %>
+<%- partial('_partial/sidebar-about', {}) %>
+<% } else if(page.layout === 'post') { %>
+<%- partial('_partial/sidebar-toc', {index: false, post: page}) %>
+<% } else { %>
+<%- partial('_common/aside', {}, {cache: true}) %>
+<% } %>
