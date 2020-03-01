@@ -1250,6 +1250,10 @@ a[href]:hover {
     color: #6b12b4;
   }
 
+.gt-no-init p {
+  margin-bottom: 0.5rem;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

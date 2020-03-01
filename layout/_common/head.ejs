@@ -24,11 +24,12 @@
 
     <%- fragment_cache('css-cdn', () => {
         let html = '';
-        // comment
-        if (page.mathjax || page.mathjax) html += `<link href="${theme.cdn.katex}" rel="stylesheet">`
-        if (!is_home() && !is_category() && !is_tag() && !is_archive() && page.comment) {
-            if (theme.comment.type === 'gitment') html += `<link href="${theme.cdn.gitment}" rel="stylesheet">`
+        if (page.katex || page.mathjax) html += `<link href="${theme.cdn.katex}" rel="stylesheet">`
+        if (!is_home() && !is_category() && !is_tag() && !is_archive() && page.comments) {
             if (theme.comment.type === 'gitalk') html += `<link href="${theme.cdn.gitalk}" rel="stylesheet">`
+        }
+        if(theme.fancybox) {
+            html += `<link href="${theme.cdn.lightgallery_css}" rel="stylesheet">`
         }
 
         // html += `<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">`;

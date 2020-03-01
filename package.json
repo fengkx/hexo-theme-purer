@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.8.4",
-    "core-js": "^3.6.4"
+    "core-js": "^3.6.4",
+    "globby": "^11.0.0"
   }
 }

@@ -8,6 +8,7 @@ const postcss = require('gulp-postcss');
 const cleanCSS = require('gulp-clean-css');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
+const globby = require('globby');
 
 gulp.task('css', () => gulp.src('src/**/*.css')
 // eslint-disable-next-line global-require,import/no-unresolved
@@ -17,19 +18,22 @@ gulp.task('css', () => gulp.src('src/**/*.css')
   .pipe(gulp.dest('source')));
 
 function singleFileProcess(fullPath, filename) {
-  browserify(`src/js/${fullPath}`)
-    .transform('babelify', {
-      presets: [
-        ['@babel/preset-env', { useBuiltIns: 'usage', corejs: 3 }],
-      ],
-      plugins: ['@babel/plugin-transform-runtime'],
-    })
-    .bundle()
-    .pipe(source(filename))
-    .pipe(buffer())
-    .pipe(uglify())
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('source/js'));
+  return (cb) => {
+    browserify(`src/js/${fullPath}`)
+      .transform('babelify', {
+        presets: [
+          ['@babel/preset-env', { useBuiltIns: 'usage', corejs: 3 }],
+        ],
+        plugins: ['@babel/plugin-transform-runtime'],
+      })
+      .bundle()
+      .pipe(source(filename))
+      .pipe(buffer())
+      .pipe(uglify())
+      .pipe(rename({ suffix: '.min' }))
+      .pipe(gulp.dest('source/js'));
+    cb();
+  };
 }
 
 gulp.task('dom-event', () => gulp.src('src/js/dom-event/*.js')
@@ -43,10 +47,18 @@ gulp.task('dom-event', () => gulp.src('src/js/dom-event/*.js')
   .pipe(rename({ suffix: '.min' }))
   .pipe(gulp.dest('source/js')));
 
-gulp.task('repository.js', async () => singleFileProcess('repository.js', 'repository.js'));
+
 gulp.task('local-search.js', async () => singleFileProcess('search/local-search.js', 'local-search.js'));
 
-gulp.task('js', gulp.parallel('dom-event', 'repository.js', 'local-search.js'));
+gulp.task('simple-js', async (cb) => {
+  const entries = await globby('src/js/*.js');
+  const fnames = entries.map((e) => e.substring(7));
+  fnames.forEach((name) => {
+    singleFileProcess(name, name)(cb);
+  });
+});
+
+gulp.task('js', gulp.parallel('dom-event', 'local-search.js', 'simple-js'));
 
 gulp.task('build', gulp.parallel('css', 'js'));
 gulp.task('default', gulp.parallel('build'));
