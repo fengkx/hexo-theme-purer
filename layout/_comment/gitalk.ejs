@@ -1,0 +1,14 @@
+<script src="<%= theme.cdn.gitalk_js %>"></script>
+<script src="<%= theme.cdn.blueimp_md5 %>"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '<%= theme.comment.gitalk.ClientID %>',
+        clientSecret: '<%= theme.comment.gitalk.ClientSecret %>',
+        repo: '<%= theme.comment.gitalk.repo %>',
+        owner: '<%= theme.comment.gitalk.owner %>',
+        admin: ['<%= theme.comment.gitalk.admin %>'],
+        id: md5(location.pathname),
+        distractionFreeMode: true
+    })
+    gitalk.render('comments')
+</script>

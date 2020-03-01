@@ -1,0 +1,16 @@
+<% if (typeof(script) !== 'undefined' && script) { %>
+    <script defer>
+    var disqus_config = function () {
+        <% if (page.permalink) { %>
+            this.page.url = '<%= page.permalink %>';
+        <% } %>
+        this.page.identifier = '<%= page.disqusId || page.slug %>';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + '<%= theme.comment.disqus %>' + '.disqus.com/<% if (page.comments) { %>embed.js<% } else { %>count.js<% } %>';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<% } %>

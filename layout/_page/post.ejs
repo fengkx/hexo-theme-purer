@@ -18,6 +18,7 @@
             <%- page.content %>
         </div>
     </article>
+    <%- partial('_partial/comment', {post: page}) %>
     <%- partial('_partial/pagination', {type: 'page'}) %>
 </main>
 <% if(page.layout === 'about') { %>

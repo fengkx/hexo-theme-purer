@@ -488,4 +488,8 @@ a[href]:hover {
     }
 }
 
+.gt-no-init p {
+    @apply mb-2;
+}
+
 @tailwind utilities;
