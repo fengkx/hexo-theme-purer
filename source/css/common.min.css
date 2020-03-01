@@ -1226,6 +1226,30 @@ a[href]:hover {
   cursor: inherit;
 }
 
+.code .string {
+    color: rgb(16, 114, 18);
+  }
+
+.code .keyword {
+    color: rgb(0, 27, 170);
+  }
+
+.code .number {
+    color: rgb(153, 0, 85);
+  }
+
+.code .literal {
+    color: rgb(175,0,85);
+  }
+
+.code .comment {
+    color: #718096;
+  }
+
+.code .built_in {
+    color: #6b12b4;
+  }
+
 .sr-only {
   position: absolute;
   width: 1px;

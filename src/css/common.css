@@ -467,4 +467,25 @@ a[href]:hover {
     cursor: inherit;
 }
 
+.code {
+    .string {
+        color: rgb(16, 114, 18);;
+    }
+    .keyword {
+        color: rgb(0, 27, 170);
+    }
+    .number {
+        color: rgb(153, 0, 85);
+    }
+    .literal {
+        color: rgb(175,0,85);
+    }
+    .comment {
+        @apply text-gray-600;
+    }
+    .built_in {
+        color: #6b12b4;
+    }
+}
+
 @tailwind utilities;
