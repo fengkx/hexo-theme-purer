@@ -1,7 +1,7 @@
 <script id="search-teamplate" type="text/html">
     <div>
         <div class="search-header bg-gray-400">
-            <input model="keyword" class="inline-block w-full h-10 px-2 py-1" placeholder="<%= __('widget.search')%>" type="text">
+            <input id="actual-search-input" model="keyword" ref="input" class="inline-block w-full h-10 px-2 py-1" placeholder="<%= __('widget.search')%>" type="text">
         </div>
         <div class="search-result bg-gray-200">
             {{#each searchPosts}}
