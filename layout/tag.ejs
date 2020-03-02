@@ -5,7 +5,7 @@
             <p class="text-gray-600"><%= _p('total.article', page.posts.length) %></p>
         </header>
         <div class="article-body">
-            <%- partial('_partial/archive', {}, {cache: true}) %>
+            <%- partial('_partial/archive') %>
         </div>
     </article>
     <%- partial('_partial/pagination', {type: 'page'}) %>
