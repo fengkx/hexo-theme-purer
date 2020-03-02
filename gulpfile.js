@@ -18,7 +18,7 @@ gulp.task('css', () => gulp.src('src/**/*.css')
     content: ['**/*.ejs'],
     // rejected: true,
     defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-    whitelistPatterns: [/text-/],
+    whitelistPatterns: [/text-/, /icon-/],
   }))
   .pipe(cleanCSS())
   .pipe(rename({ suffix: '.min' }))
