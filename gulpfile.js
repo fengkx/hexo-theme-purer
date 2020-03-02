@@ -9,11 +9,18 @@ const cleanCSS = require('gulp-clean-css');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const globby = require('globby');
+const purgecss = require('gulp-purgecss');
 
 gulp.task('css', () => gulp.src('src/**/*.css')
 // eslint-disable-next-line global-require,import/no-unresolved
   .pipe(postcss([require('postcss-import'), require('tailwindcss'), require('postcss-nested'), require('autoprefixer')]))
-  // .pipe(cleanCSS())
+  .pipe(purgecss({
+    content: ['**/*.ejs'],
+    // rejected: true,
+    defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+    whitelistPatterns: [/text-/],
+  }))
+  .pipe(cleanCSS())
   .pipe(rename({ suffix: '.min' }))
   .pipe(gulp.dest('source')));
 

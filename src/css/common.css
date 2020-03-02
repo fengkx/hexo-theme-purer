@@ -1,7 +1,7 @@
+/* purgecss start ignore */
 @tailwind base;
 
 @tailwind components;
-
 .menu-item > {
     a {
         @apply px-6 py-2 block;
@@ -328,6 +328,9 @@
     @apply relative rounded-sm;
     padding: 32px 10px 0 10px !important;
     background: #fafafa;
+    .gutter {
+        @apply select-none;
+    }
 }
 .highlight, pre {
     @apply bg-gray-200;
@@ -492,4 +495,6 @@ a[href]:hover {
     @apply mb-2;
 }
 
+
+/* purgecss end ignore */
 @tailwind utilities;
