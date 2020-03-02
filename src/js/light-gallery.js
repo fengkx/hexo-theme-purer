@@ -3,10 +3,10 @@
   .forEach((img) => {
     const imageCaption = img.getAttribute('alt');
     let imageWrapLink = img.parentNode;
-    while (imageWrapLink !== document.body
-        || (imageWrapLink.tagName === 'A' && imageWrapLink.href.length > 0)) {
+    while (imageWrapLink && (imageWrapLink !== document.body)
+        && (imageWrapLink.tagName !== 'A' && imageWrapLink.href)) {
       imageWrapLink = imageWrapLink.parentElement;
-    }
+    } // search up to document.body
     if (imageWrapLink === document.body) {
       let src = img.getAttribute('src');
       const idx = src.lastIndexOf('?');
