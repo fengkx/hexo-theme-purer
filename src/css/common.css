@@ -7,12 +7,19 @@
         @apply px-6 py-2 block;
     }
 }
+footer {
+    @apply pb-2;
+}
 
 .footer-social-links {
-    @apply px-6 py-3;
+    @apply px-6;
     > a {
         @apply mr-2
     }
+}
+.footer-custom {
+    @apply px-6 pt-1;
+    font-weight: 520;
 }
 
 @screen sm {

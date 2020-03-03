@@ -67,6 +67,9 @@ postCount:
 toc: true
 fancybox: true
 
+footer:
+#  custom:
+
 profile:
   enabled: true # Whether to show profile bar
 #  avatar: images/avatar.jpg
