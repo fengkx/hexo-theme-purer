@@ -187,10 +187,9 @@ footer {
 }
 
 .article-meta {
-    @apply text-gray-600;
+    @apply text-gray-700;
     .iconfont {
         font-size: 13px;
-        @apply text-gray-600;
     }
     > {
         span {

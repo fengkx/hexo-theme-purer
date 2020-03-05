@@ -3,8 +3,8 @@
         <% if (theme.profile && theme.profile.enabled) { %>
         <% const profile = theme.profile; %>
         <div class="profile sm:text-center md:px-1 lg:px-3 sm:pb-4 sm:pt-6">
-            <a id="avatar" alt="avatar" href="<%= profile.follow %>" class="inline-block lg:w-16 lg:h-16 w-8 h-8 m-2" target="_blank" rel="noopener" rel="noreferrer" >
-                <img src="<%= (profile.gravatar ? gravatar(profile.gravatar, 128) : url_for(profile.avatar)) %>" class="rounded-full">
+            <a id="avatar" role="link" href="<%= profile.follow %>" class="inline-block lg:w-16 lg:h-16 w-8 h-8 m-2" target="_blank" rel="noopener" rel="noreferrer" >
+                <img src="<%= (profile.gravatar ? gravatar(profile.gravatar, 128) : url_for(profile.avatar)) %>" class="rounded-full" alt="avatar">
             </a>
             <h2 id="name" class="hidden lg:block"><%= profile.author %></h2>
             <h3 id="title" class="hidden xl:block"><%= profile.author_title %></h3>
@@ -17,16 +17,16 @@
         </div>
         <% } %>
         <%- partial('_search/index') %>
-        <button name="menu toogle button" id="menu-toggle-btn" class="block sm:hidden p-3">
+        <button name="menu toogle button" id="menu-toggle-btn" class="block sm:hidden p-3" role="button" aria-expanded="false">
             <i class="iconfont icon-hamburger"></i>
         </button>
     </div>
     <nav id="menu-nav" class="hidden sm:flex flex-col">
         <% for (let i in theme.menu) { %>
         <% const itemName = i.toLowerCase() %>
-            <div class="menu-item menu-<%= itemName %>">
+            <div class="menu-item menu-<%= itemName %>" role="menuitem">
                 <a href="<%= url_for(theme.menu[i]) %>">
-                    <i class="iconfont <%= theme.menu_icons[itemName] %>"></i>
+                    <i class="iconfont <%= theme.menu_icons[itemName] %>" aria-hidden="true"></i>
                     <span class="menu-title"><%= __(`menu.${i}`) %></span>
                 </a>
             </div>
