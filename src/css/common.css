@@ -18,8 +18,7 @@ footer {
     }
 }
 .footer-custom {
-    @apply px-6 pt-1;
-    font-weight: 520;
+    @apply px-6 pt-1 text-gray-600 text-sm font-light;
 }
 
 @screen sm {
@@ -326,7 +325,10 @@ footer {
         @apply text-indigo-600 no-underline;
     }
     code {
-        @apply text-gray-800 bg-gray-200 mx-1 my-2 px-2 py-1 rounded-sm inline-block
+        @apply text-gray-800 bg-gray-200 mx-1 my-2 px-2 py-1 rounded-sm inline-block;
+    }
+    blockquote {
+        @apply bg-gray-200 px-6 py-5 border-l-8 border-gray-400 my-4;
     }
 }
 
