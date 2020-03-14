@@ -325,7 +325,7 @@ footer {
         @apply text-indigo-600 no-underline;
     }
     code {
-        @apply text-gray-800 bg-gray-200 mx-1 my-2 px-2 py-1 rounded-sm inline-block;
+        @apply text-gray-800 bg-gray-200 mx-1 my-1 px-2 rounded-sm inline-block;
     }
     blockquote {
         @apply bg-gray-200 px-6 py-5 border-l-8 border-gray-400 my-4;
@@ -500,6 +500,9 @@ a[href]:hover {
     }
     .comment {
         @apply text-gray-600;
+    }
+    .attr {
+        color: #0b258d;
     }
     .built_in {
         color: #6b12b4;
