@@ -17,8 +17,9 @@ footer {
         @apply mr-2
     }
 }
-.footer-custom {
-    @apply px-6 pt-1 text-gray-600 text-sm font-light;
+.footer-custom, .theme-brand {
+    @apply px-6 text-gray-700 font-light;
+    font-size: 13px;
 }
 
 @screen sm {
