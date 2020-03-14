@@ -11,3 +11,6 @@ Remake version of [hexo-theme-pure](https://github.com/cofess/hexo-theme-pure) p
 Repository: https://github.com/fengkx/purer-theme-demo
 
 Live Demo: https://purer.netlify.com/
+
+# Document
+[中文文档](https://purer.netlify.com/document-zh/)
