@@ -332,6 +332,13 @@ footer {
     }
 }
 
+blockquote.copyright {
+    @apply bg-gray-200 px-6 py-5 border-indigo-200 border-l-8 my-4 mt-8;
+    > p:not(:last-child) {
+        @apply pb-1;
+    }
+}
+
 .highlight {
     @apply relative rounded-sm;
     padding: 32px 10px 0 10px !important;

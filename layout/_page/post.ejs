@@ -17,6 +17,7 @@
         <div class="marked-body article-body">
             <%- page.content %>
         </div>
+        <%- partial('_partial/post/copyright', {post: page}) %>
     </article>
     <%- partial('_partial/comment', {post: page}) %>
     <%- partial('_partial/pagination', {type: 'page'}) %>

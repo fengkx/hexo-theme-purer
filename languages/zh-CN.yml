@@ -31,9 +31,9 @@ page:
   links: 友情链接
   links-desc: 欢迎交换链接，可在当前页面留言
   about: 关于
-pagination: 
+pagination:
   next: 下一页
-  prev: 上一页 
+  prev: 上一页
   page: 第 %d 页
   pageof: Page %d of %s
 widget:
@@ -44,7 +44,7 @@ widget:
   categories: 分类
   tagcloud: 标签云
   recent_posts: 最新文章
-profile: 
+profile:
   follow: 关注
   skill: 技能
   label: 个人标签
@@ -89,6 +89,7 @@ tweets: 推文
 share: Share
 rss_feed: RSS Feed
 copyright:
+  permalink: 本文链接
   theme_by: Theme by
   base_on: base on
   powered_by: Powered by

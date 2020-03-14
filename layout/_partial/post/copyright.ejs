@@ -1,0 +1,6 @@
+<% if(post.hide_license !== true && (theme.license || post.license)) { %>
+<blockquote class="copyright">
+    <p><strong><%= __('copyright.permalink') %> : </strong><a class="permalink" href="<%= post.permalink %>"><%= post.permalink %></a></p>
+    <p><strong><%- theme.license %></strong></p>
+</blockquote>
+<% } %>

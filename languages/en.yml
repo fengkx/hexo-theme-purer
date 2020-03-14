@@ -31,7 +31,7 @@ page:
   links: Links
   links-desc: Welcome to the exchange link, you can leave a message on this page
   about: About
-pagination: 
+pagination:
   next: Next
   prev: Prev
   page: Page %d
@@ -44,7 +44,7 @@ widget:
   categories: Categories
   tagcloud: Tag Cloud
   recent_posts: Recent Posts
-profile: 
+profile:
   follow: Follow
   skill: Skills
   label: Labels
@@ -89,6 +89,7 @@ tweets: Tweets
 share: Share
 rss_feed: RSS Feed
 copyright:
+  permalink: Link to this article
   theme_by: Theme by
   base_on: base on
   powered_by: Powered by
