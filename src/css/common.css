@@ -330,6 +330,11 @@ footer {
     }
     blockquote {
         @apply bg-gray-200 px-6 py-5 border-l-8 border-gray-400 my-4;
+        footer {
+            cite {
+                @apply ml-3;
+            }
+        }
     }
     table {
         @apply border;
@@ -392,6 +397,14 @@ blockquote.copyright {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
 }
+.gist-data {
+.highlight:after {
+    @apply hidden;
+}
+.highlight:before {
+    background-color: unset;
+}
+}
 
 .highlight:after {
     content: " ";
@@ -447,6 +460,9 @@ blockquote.copyright {
 .highlight .line {
     height: 24px;
     line-height: 24px
+}
+.highlight .line.marked {
+    @apply bg-indigo-200;
 }
 
 .highlight .gutter pre {
@@ -514,8 +530,14 @@ a[href]:hover {
     .attr {
         color: #0b258d;
     }
-    .built_in {
+    .built_in, .variable {
         color: #6b12b4;
+    }
+    .meta {
+        color: #730909;
+    }
+    .section {
+        color: #973f14;
     }
 }
 
