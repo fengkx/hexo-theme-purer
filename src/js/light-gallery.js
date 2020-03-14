@@ -22,7 +22,7 @@
       wraper.setAttribute('data-caption', imageCaption);
     }
   });
-lightGallery(document.querySelector('.content'), {
+lightGallery(document.querySelector('main'), {
   selector: '.image',
   zoom: true,
   fullScreen: true,

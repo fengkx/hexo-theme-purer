@@ -1,0 +1,9 @@
+<% if(post.photos && post.photos.length > 0) {%>
+<div class="post-gallery w-full">
+    <% post.photos.forEach(function (photo) { %>
+        <div class="image" data-src="<%= photo%>">
+            <img src="<%= photo%>" alt="<%= photo%>" itemprop="image">
+        </div>
+    <% }) %>
+</div>
+<% } %>

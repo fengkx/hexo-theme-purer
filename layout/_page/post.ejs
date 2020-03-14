@@ -1,4 +1,5 @@
 <main class="flex-1 px-4 py-12 md:px-5 lg:px-8 lg:py-4 relative min-h-screen">
+    <%- partial('_partial/post/gallery', {post: page}) %>
     <article class="content article article-archives article-type-list" itemscope="">
         <header class="article-header">
             <%- partial('_partial/post/title', {post: page, index: false, className: 'article-title'})%>
