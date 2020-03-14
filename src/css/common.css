@@ -331,6 +331,15 @@ footer {
     blockquote {
         @apply bg-gray-200 px-6 py-5 border-l-8 border-gray-400 my-4;
     }
+    table {
+        @apply border;
+        td, th {
+            @apply px-4 py-2 border;;
+        }
+        tr:nth-child(even) {
+            @apply bg-gray-200;
+        }
+    }
 }
 
 blockquote.copyright {
