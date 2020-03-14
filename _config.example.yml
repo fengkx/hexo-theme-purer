@@ -21,10 +21,11 @@ menu_icons:
   links: icon-friend
   about: icon-cup
 
-
-
 site:
   favicon: /images/favicon.ico
+  site_verification:
+#    google:
+#    baidu:
 
 pagination:
   prev:
