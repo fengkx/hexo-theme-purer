@@ -12,5 +12,9 @@ Repository: https://github.com/fengkx/purer-theme-demo
 
 Live Demo: https://purer.netlify.com/
 
+Test posts are based on [hexo-theme-unit-test](https://github.com/hexojs/hexo-theme-unit-test)
+
 # Document
 [中文文档](https://purer.netlify.com/document-zh/)
+
+[English Document](https://purer.netlify.com/document-en/)
