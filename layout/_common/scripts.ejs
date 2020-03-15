@@ -4,13 +4,11 @@
     <div class="hidden invisible" id="github-username"><%= theme.github.username %></div>
     <%- js('js/repository.min.js') %>
 <% } %>
-<%- js('js/local-search.min.js') %>
+<%- js('js/search.min.js') %>
 <% if (!is_home() && !is_category() && !is_tag() && !is_archive() && page.comments && theme.comment.type) { %>
     <%- partial(`_comment/${theme.comment.type}`) %>
 <% } %>
 <% if (theme.fancybox) { %>
     <script src="<%= theme.cdn.lightgallery_js %>"></script>
-    <%- js('js/lg-fullscreen.min.js') %>
-    <%- js('js/lg-zoom.min.js') %>
     <%- js('js/light-gallery.min.js') %>
 <% } %>

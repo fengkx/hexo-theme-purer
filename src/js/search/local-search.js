@@ -14,13 +14,14 @@ const searchApp = new Yox({
     searchPosts() {
       const posts = this.get('posts');
       const kw = this.get('keyword');
-      return posts
+      const result = posts
         .filter((p) => p.title.includes(kw) || p.text.includes(kw))
         .map((p) => {
-          // eslint-disable-next-line no-param-reassign
-          p.text = `${p.text.substring(0, 100)}...`;
-          return p;
+          const r = { ...p };
+          r.text = `${p.text.substring(0, 100)}...`;
+          return r;
         });
+      return result;
     },
   },
 });
