@@ -1,5 +1,7 @@
 # Hexo-theme-purer
 
+![purer-theme-responsive](https://i.imgur.com/tEeE4s4.png)
+
 Remake version of [hexo-theme-pure](https://github.com/cofess/hexo-theme-pure) powered by TailWind
 
 1. **Fewer feature support**
