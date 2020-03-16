@@ -439,11 +439,11 @@ blockquote.copyright {
 
 .highlight td,.highlight th {
     border: none;
-    padding: 0
+    padding: 0!important;
 }
 
 .highlight td.code,.highlight th.code {
-    width: 100%!important
+    width: 100%!important;
 }
 
 .highlight figcaption {
