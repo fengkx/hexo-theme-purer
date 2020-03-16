@@ -26,6 +26,7 @@ site:
   site_verification:
 #    google:
 #    baidu:
+#  google_analytics:
 
 pagination:
   prev:
