@@ -18,18 +18,26 @@
             }
         }
     }) %>
-    <% if (theme.site.favicon){ %>
-    <link rel="icon" href="<%- theme.site.favicon %>" type="image/x-icon">
-    <% } %>
-    <% if (theme.site.site_verification) { %>
-        <% const v = theme.site.site_verification; %>
-        <% if (v.google) { %>
-            <meta name="google-site-verification" content="<%= v.google %>">
-        <% } %>
-        <% if (v.baidu) { %>
-            <meta name="baidu-site-verification" content="<%= v.baidu %>">
-        <% } %>
-    <% } %>
+    <%- fragment_cache('site-metas', () => {
+      let html = '';
+      if (theme.site.favicon) {
+          html += `<link rel="icon" href="${theme.site.favicon}" type="image/x-icon">`
+      }
+      if (theme.site.manifest) {
+        html += `<link rel="manifest" href="${theme.site.manifest}" >`
+      }
+      if (theme.site.site_verification) {
+        const v = theme.site.site_verification
+          if (v.google) {
+            html += `<meta name="google-site-verification" content="${v.google}">`
+          }
+          if (v.baidu) {
+            html += `<meta name="baidu-site-verification" content="${v.baidu}">`
+          }
+      }
+      return html;
+    }) %>
+
     <%- fragment_cache('css-cdn', () => {
         let html = '';
         // html += `<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">`;

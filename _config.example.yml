@@ -23,6 +23,7 @@ menu_icons:
 
 site:
   favicon: /images/favicon.ico
+  #manifest: 
   site_verification:
 #    google:
 #    baidu:
