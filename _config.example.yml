@@ -23,11 +23,12 @@ menu_icons:
 
 site:
   favicon: /images/favicon.ico
-  #manifest: 
+  #manifest:
   site_verification:
 #    google:
 #    baidu:
 #  google_analytics:
+#  service_worker:
 
 pagination:
   prev:

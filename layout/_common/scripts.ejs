@@ -12,3 +12,12 @@
     <script src="<%= theme.cdn.lightgallery_js %>"></script>
     <%- js('js/light-gallery.min.js') %>
 <% } %>
+<% if ( theme.site.service_worker ) { %>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('<%=theme.site.service_worker %>').then(function() {
+          console.log('ServiceWorker has been registered!');
+        }).catch(console.error);
+      }
+    </script>
+<% } %>
