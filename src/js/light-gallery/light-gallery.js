@@ -8,7 +8,13 @@
       imageWrapLink = imageWrapLink.parentElement;
     } // search up to document.body
     if (imageWrapLink === document.body) {
-      const src = img.getAttribute('src');
+      let src = img.getAttribute('src');
+      const u = new URL(src);
+      const matches = u.search.match(/url=(.+)&*/);
+      if (matches && matches[1]) {
+        // eslint-disable-next-line prefer-destructuring
+        src = matches[1];
+      }
       const wraper = document.createElement('div');
       wraper.classList.add('image');
       wraper.setAttribute('data-src', src);
