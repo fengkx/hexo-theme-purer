@@ -8,11 +8,7 @@
       imageWrapLink = imageWrapLink.parentElement;
     } // search up to document.body
     if (imageWrapLink === document.body) {
-      let src = img.getAttribute('src');
-      const idx = src.lastIndexOf('?');
-      if (idx !== -1) {
-        src = src.substring(0, idx);
-      }
+      const src = img.getAttribute('src');
       const wraper = document.createElement('div');
       wraper.classList.add('image');
       wraper.setAttribute('data-src', src);
