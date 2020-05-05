@@ -6,7 +6,10 @@ const searchApp = new Yox({
     keyword: '',
   },
   async afterCreate() {
-    const resp = await fetch('/content.json');
+    const path = document
+      .getElementById('search-teamplate')
+      .getAttribute('data-path');
+    const resp = await fetch(path);
     const data = await resp.json();
     this.set('posts', data.posts);
   },

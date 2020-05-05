@@ -1,4 +1,7 @@
-<script id="search-teamplate" type="text/html">
+<%
+const contentJson = (config.jsonContent && config.jsonContent.file) || '/content.json';
+%>
+<script id="search-teamplate" type="text/html" data-path="<%= url_for(contentJson) %>">
     <div>
         <div class="search-header bg-gray-400">
             <input id="actual-search-input" model="keyword" ref="input" class="inline-block w-full h-10 px-2 py-1" placeholder="<%= __('widget.search')%>" type="text">
