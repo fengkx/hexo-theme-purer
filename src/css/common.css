@@ -24,15 +24,23 @@ footer {
     @apply px-6 text-gray-700 font-light;
     font-size: 13px;
 }
-
+.social-links {
+    @apply px-5 pb-4;
+}
+.social-item > a {
+    @apply px-2;
+}
 @screen sm {
- .menu-item > {
-     a {
-        @apply px-5 py-2;
-     }
- }
+    .menu-item > {
+        a {
+            @apply px-5 py-2;
+        }
+    }
     .menu-title {
         @apply hidden;
+    }
+    .social-links {
+        padding: 0;
     }
 }
 

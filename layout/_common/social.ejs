@@ -1,7 +1,7 @@
 <% if(theme.profile.social.links) {
     const links = theme.profile.social.links
 %>
-<div class="social-links flex flex-col lg:hidden mt-5">
+<div class="social-links flex sm:flex-col lg:hidden mt-5">
     <% for (let i in links) { %>
         <span class="social-item text-center">
             <a href="<%= url_for(links[i]) %>">
