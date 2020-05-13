@@ -7,6 +7,9 @@
         @apply px-6 py-2 block;
     }
 }
+.iconfont.social-icon {
+    font-size: 14.5px;
+}
 footer {
     @apply pb-2;
 }
@@ -284,6 +287,7 @@ footer {
 }
 
 .marked-body {
+    @apply leading-loose;
     h1 {
         @apply text-3xl;
     }
@@ -307,7 +311,7 @@ footer {
         @apply font-bold my-4 pb-1 border-b border-gray-200;
     }
     p {
-        @apply text-base text-gray-800 leading-relaxed mb-3;
+        @apply text-base text-gray-800 mb-3;
     }
 
     ul, ol {
@@ -326,7 +330,8 @@ footer {
         @apply text-indigo-600 no-underline;
     }
     code {
-        @apply text-gray-800 bg-gray-200 mx-1 my-1 px-2 rounded-sm inline-block;
+        @apply text-gray-800 bg-gray-200 rounded-sm;
+        padding: .15em .2em .1em;
     }
     blockquote {
         @apply bg-gray-200 px-6 py-5 border-l-8 border-gray-400 my-4;
@@ -366,22 +371,9 @@ blockquote.copyright {
     @apply bg-gray-200;
     margin: 10px 0;
     padding: 15px 10px;
-    overflow: auto;
     font-size: 13px;
     color: #4d4d4c;
     line-height: 1.5;
-    scrollbar-width: thin;
-    &::-webkit-scrollbar {
-        height: 8px;
-        background-color: #e6e6e6;
-     }
-    &::-webkit-scrollbar-thumb {
-        background-color: #f2f2f2;
-        @apply rounded;
-     }
-    &::-webkit-scrollbar-track-piece {
-        background-color: #cccccc;
-     }
 }
 
 .highlight:before {
@@ -422,7 +414,7 @@ blockquote.copyright {
 
 .highlight pre {
     border: none;
-    margin: 0
+    margin: 0;
 }
 
 .highlight table {
@@ -430,11 +422,25 @@ blockquote.copyright {
     border: none;
     width: 100%;
     margin: 0;
-    padding: 0
+    padding: 0;
+    display: block;
+    overflow: auto;
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+         height: 8px;
+         background-color: #e6e6e6;
+     }
+    &::-webkit-scrollbar-thumb {
+         background-color: #cccccc;
+         @apply rounded;
+     }
+    &::-webkit-scrollbar-track-piece {
+         background-color: #f2f2f2;
+     }
 }
 
 .highlight tr {
-    border: none
+    border: none;
 }
 
 .highlight td,.highlight th {
