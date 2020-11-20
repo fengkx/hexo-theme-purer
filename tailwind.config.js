@@ -18,7 +18,7 @@ module.exports = {
     resize: false,
   },
   variants: {
-    backgroundColor: ['responsive', 'default', 'focus', 'hover'],
+    backgroundColor: ['responsive', 'DEFAULT', 'focus', 'hover'],
     zIndex: ['responsive'],
     margin: ['responsive'],
     height: ['responsive'],

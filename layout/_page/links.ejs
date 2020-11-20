@@ -5,7 +5,7 @@
             <p class="text-gray-600"><%= __('page.links-desc') %></p>
         </header>
         <div class="article-body">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 row-gap-5 col-gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-5 gap-x-6">
                 <% for (let name in site.data.links) { %>
                     <% let item = site.data.links[name]; %>
                     <div class="shadow flex">

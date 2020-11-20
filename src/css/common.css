@@ -90,7 +90,7 @@ footer {
 .tagcloud {
     @apply text-sm;
     a {
-        @apply inline-block m-1 leading-tight bg-gray-300 px-2 py-1 text-center whitespace-no-wrap rounded-sm;
+        @apply inline-block m-1 leading-tight bg-gray-300 px-2 py-1 text-center whitespace-nowrap rounded-sm;
     }
 }
 
@@ -249,7 +249,7 @@ footer {
 }
 
 .repos {
-    @apply grid grid-cols-1  row-gap-5 col-gap-8;
+    @apply grid grid-cols-1  gap-y-5 gap-x-8;
 
     .repo {
         @apply px-3 py-1 relative shadow-lg;
