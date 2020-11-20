@@ -4,17 +4,10 @@ const concat = require('gulp-concat');
 const uglifyES = require('gulp-uglify-es').default;
 const postcss = require('gulp-postcss');
 const cleanCSS = require('gulp-clean-css');
-const purgecss = require('gulp-purgecss');
 
 gulp.task('css', () => gulp.src('src/**/*.css')
 // eslint-disable-next-line global-require,import/no-unresolved
   .pipe(postcss([require('postcss-import'), require('tailwindcss'), require('postcss-nested'), require('autoprefixer')]))
-  .pipe(purgecss({
-    content: ['**/*.ejs'],
-    // rejected: true,
-    defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-    whitelistPatterns: [/text-/, /icon-/],
-  }))
   .pipe(cleanCSS())
   .pipe(rename({ suffix: '.min' }))
   .pipe(gulp.dest('source')));

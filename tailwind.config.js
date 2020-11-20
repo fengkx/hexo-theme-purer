@@ -23,4 +23,11 @@ module.exports = {
     margin: ['responsive'],
     height: ['responsive'],
   },
+  purge: {
+    content: ['**/*.ejs'],
+    options: {
+      defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+      safelist: [/text-/, /icon-/],
+    }
+  }
 };
