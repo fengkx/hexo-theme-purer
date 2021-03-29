@@ -1,4 +1,5 @@
 const { colors } = require('tailwindcss/defaultTheme');
+const lineClamp = require('@tailwindcss/line-clamp');
 
 module.exports = {
   theme: {
@@ -9,6 +10,14 @@ module.exports = {
       indigo: colors.indigo,
     },
   },
+  extend: {
+    lineClamp: {
+      4: '4',
+    },
+  },
+  plugins: [
+    lineClamp,
+  ],
   corePlugins: {
     textTransform: false,
     rotate: false,
