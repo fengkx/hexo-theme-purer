@@ -1,6 +1,7 @@
 <%
 const contentJson = (config.jsonContent && config.jsonContent.file) || '/content.json';
 %>
+<div id="content-json" data-placeholder="<%= __('widget.search')%>" class="invisible hidden"><%= contentJson %></div>
 <script id="search-teamplate" type="text/html" data-path="<%= url_for(contentJson) %>">
     <div>
         <div class="search-header bg-gray-400">

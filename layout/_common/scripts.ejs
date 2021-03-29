@@ -1,10 +1,9 @@
 <%- js('js/dom-event.min.js') %>
-<script src="<%= theme.cdn.yox %>"></script>
 <% if(page.layout === 'repository') { %>
     <div class="hidden invisible" id="github-username"><%= theme.github.username %></div>
     <%- js('js/repository.min.js') %>
 <% } %>
-<%- js('js/search.min.js') %>
+<%- js('js/local-search.min.js') %>
 <% if (!is_home() && !is_category() && !is_tag() && !is_archive() && page.comments && theme.comment.type) { %>
     <%- partial(`_comment/${theme.comment.type}`) %>
 <% } %>

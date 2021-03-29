@@ -19,10 +19,14 @@ gulp.task('dom-event', () => gulp.src('src/js/dom-event/*.js')
   .pipe(rename({ suffix: '.min' }))
   .pipe(gulp.dest('source/js')));
 
-gulp.task('search.js', () => gulp.src('src/js/search/*.js')
-  .pipe(concat('search.js'))
-  .pipe(uglifyES())
-  .pipe(rename({ suffix: '.min' }))
+// gulp.task('search.js', () => gulp.src('src/js/search/*.js')
+//   .pipe(concat('search.js'))
+//   .pipe(uglifyES())
+//   .pipe(rename({ suffix: '.min' }))
+//   .pipe(gulp.dest('source/js')));
+
+gulp.task('local-search', () => gulp.src('src/js/search/local-search/dist/bundle.js')
+  .pipe(rename({ basename: 'local-search', suffix: '.min' }))
   .pipe(gulp.dest('source/js')));
 
 gulp.task('light-gallery.js', () => gulp.src('src/js/light-gallery/*.js')
@@ -40,7 +44,7 @@ gulp.task('simple-js', () => gulp.src('src/js/*.js')
   .pipe(rename({ suffix: '.min' }))
   .pipe(gulp.dest('source/js')));
 
-gulp.task('js', gulp.parallel('dom-event', 'search.js', 'light-gallery.js', 'simple-js', 'repository'));
+gulp.task('js', gulp.parallel('dom-event', 'light-gallery.js', 'simple-js', 'repository', 'local-search'));
 
 gulp.task('build', gulp.parallel('css', 'js'));
 gulp.task('default', gulp.parallel('build'));
