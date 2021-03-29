@@ -19,36 +19,3 @@
     </article>
     <%- partial('_partial/pagination', {type: 'page'}) %>
 </main>
-<script id="repo-template" type="text/html">
-    <div>
-    {{#if loading}}
-    <p v-if="loading">Loading...</p>
-    {{/if}}
-    <div class="repos">
-        {{#each repos_sorted}}
-        <div v-for="repo in repos_sorted" key="{{this.id}}" class="repo">
-            <header>
-                <h3 class="repo-title">
-                    <a href="{{ this.html_url }}">{{this.full_name}}</a>
-                </h3>
-            </header>
-            <p class="repo-body">
-                {{ this.description }}
-            </p>
-            <div class="repo-meta">
-                <div class="repo-meta-inner">
-                    <span class="repo-lang">{{ this.language }}</span>
-                    <span class="repo-star"><i class="iconfont icon-star"></i> {{ this.stargazers_count }}</span>
-                    <span class="repo-fork"><i class="iconfont icon-code-fork"></i> {{ this.forks_count }}</span>
-                    <span class="meta meta-last-updated">
-                        <i class="icon icon-clock"></i>
-                        <time datetime="repo.updated_at">{{ this.updated_at.substring(0, this.updated_at.lastIndexOf("T")) }}</time>
-                    </span>
-                </div>
-            </div>
-        </div>
-        {{/each}}
-    </div>
-    </div>
-</script>
-

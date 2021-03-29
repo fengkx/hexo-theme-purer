@@ -31,12 +31,16 @@ gulp.task('light-gallery.js', () => gulp.src('src/js/light-gallery/*.js')
   .pipe(rename({ suffix: '.min' }))
   .pipe(gulp.dest('source/js')));
 
+gulp.task('repository', () => gulp.src('src/js/repository/dist/bundle.js')
+  .pipe(rename({ basename: 'repository', suffix: '.min' }))
+  .pipe(gulp.dest('source/js')));
+
 gulp.task('simple-js', () => gulp.src('src/js/*.js')
   .pipe(uglifyES())
   .pipe(rename({ suffix: '.min' }))
   .pipe(gulp.dest('source/js')));
 
-gulp.task('js', gulp.parallel('dom-event', 'search.js', 'light-gallery.js', 'simple-js'));
+gulp.task('js', gulp.parallel('dom-event', 'search.js', 'light-gallery.js', 'simple-js', 'repository'));
 
 gulp.task('build', gulp.parallel('css', 'js'));
 gulp.task('default', gulp.parallel('build'));
