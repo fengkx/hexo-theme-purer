@@ -8,8 +8,11 @@
     <%- partial(`_comment/${theme.comment.type}`) %>
 <% } %>
 <% if (theme.fancybox) { %>
-    <script src="<%= theme.cdn.lightgallery_js %>"></script>
+    <script defer src="<%= theme.cdn.lightgallery_js %>"></script>
     <%- js('js/light-gallery.min.js') %>
+<% } %>
+<% if (page.aplayer) { %>
+    <script defer src="<%= theme.cdn.aplayer %>"></script>
 <% } %>
 <% if ( theme.site.service_worker ) { %>
     <script>
