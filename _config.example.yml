@@ -57,6 +57,7 @@ comment:
     meta: nick,mail,link # custom comment header
     pageSize: 10 # pagination size
     visitor: false # Article reading statistic https://valine.js.org/visitor.html
+    lang: en # Language of comment instruction. Default CH
 
 
 github:

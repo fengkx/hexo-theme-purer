@@ -8,14 +8,15 @@ meta = meta.split(',').filter(function(item) {
 });
 new Valine({
   el: '#vcomments',
-  verify: <%= theme.comment.valine.verify %>,
-  notify: <%= theme.comment.valine.notify %>,
+  verify: '<%= theme.comment.valine.verify %>',
+  notify: '<%= theme.comment.valine.notify %>',
   appId: '<%= theme.comment.valine.appid %>',
   appKey: '<%= theme.comment.valine.appkey %>',
   placeholder: '<%= theme.comment.valine.placeholder %>',
   avatar: '<%= theme.comment.valine.avatar %>',
   meta: meta,
   pageSize: '<%= theme.comment.valine.pageSize %>' || 10,
-  visitor: <%= theme.comment.valine.visitor %>
+  visitor: '<%= theme.comment.valine.visitor %>',
+  lang: '<%= theme.comment.valine.lang %>'
 });
 </script>
