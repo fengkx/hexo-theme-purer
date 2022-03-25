@@ -7,7 +7,7 @@
                 <img src="<%= (profile.gravatar ? gravatar(profile.gravatar, 128) : url_for(profile.avatar)) %>" class="rounded-full" alt="avatar">
             </a>
             <h2 id="name" class="hidden lg:block"><%= profile.author %></h2>
-            <h3 id="title" class="hidden xl:block"><%= profile.author_title %></h3>
+            <h3 id="title" class="hidden lg:block"><%= profile.author_title %></h3>
             <% if (profile.location) { %>
             <small id="location" class="hidden lg:block">
                 <i class="iconfont icon-map-icon"></i>
