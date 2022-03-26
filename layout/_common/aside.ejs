@@ -2,6 +2,7 @@
     <div class="widgets">
         <% theme.widgets.forEach(function (widget) { %>
             <%- partial(`_widget/${widget}`, {title: true}, {cache: true}) %>
+            <hr>
         <% }) %>
     </div>
 </aside>

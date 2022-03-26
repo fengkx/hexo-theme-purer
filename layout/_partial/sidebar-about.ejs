@@ -7,9 +7,10 @@
                     <ul class="link-list">
                         <% for(var i in theme.profile.links) { %>
                             <li>
-                                <%= i %>:
                                 <% if (theme.profile.links[i].startsWith('http')) { %>
-                                    <a href="<%- theme.profile.links[i] %>" target="_blank"><%- theme.profile.links[i] %></a>
+                                    <a href="<%- theme.profile.links[i] %>" target="_blank"><%= i%></a>
+                                <% } else if (i.toLowerCase().startsWith('email')) { %>
+                                    <a href="mailto:<%- theme.profile.links[i] %>"><%- theme.profile.links[i] %></a>
                                 <%  } else { %>
                                     <a><%- theme.profile.links[i] %></a>
                                 <% } %>
