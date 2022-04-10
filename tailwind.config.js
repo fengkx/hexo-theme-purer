@@ -1,10 +1,10 @@
-const { colors } = require("tailwindcss/defaultTheme");
-const lineClamp = require("@tailwindcss/line-clamp");
+const { colors } = require('tailwindcss/defaultTheme');
+const lineClamp = require('@tailwindcss/line-clamp');
 
 module.exports = {
   extend: {
     lineClamp: {
-      4: "4",
+      4: '4',
     },
   },
   plugins: [lineClamp],
@@ -17,16 +17,10 @@ module.exports = {
     resize: false,
   },
   variants: {
-    backgroundColor: ["responsive", "DEFAULT", "focus", "hover"],
-    zIndex: ["responsive"],
-    margin: ["responsive"],
-    height: ["responsive"],
+    backgroundColor: ['responsive', 'DEFAULT', 'focus', 'hover'],
+    zIndex: ['responsive'],
+    margin: ['responsive'],
+    height: ['responsive'],
   },
-  purge: {
-    content: ["**/*.ejs"],
-    options: {
-      defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-      safelist: [/text-/, /icon-/],
-    },
-  },
+  content: ['**/*.ejs'],
 };
